@@ -1,4 +1,4 @@
-package ex1;
+package ex2;
 
 
 
@@ -10,9 +10,14 @@ public class EnvironmentState {
 	private String agentLocation = null;//
 
 
-	public EnvironmentState(Environment.LocationState locAState, Environment.LocationState locBState) {
+	public EnvironmentState(Environment.LocationState locAState, Environment.LocationState locBState, Environment.LocationState locCState, Environment.LocationState locDState) {
 		this.state.put(Environment.LOCATION_A, locAState);
 		this.state.put(Environment.LOCATION_B, locBState);
+		this.state.put(Environment.LOCATION_C, locCState);
+		this.state.put(Environment.LOCATION_D, locDState);
+
+
+
 	}
 
 	public void setAgentLocation(String location) {
@@ -34,7 +39,5 @@ public class EnvironmentState {
 	public void display() {
 		System.out.println("Environment state: \n\t" + this.state);
 	}
-//	public boolean createMap(int row, int column){
-//
-//	}
+
 }
