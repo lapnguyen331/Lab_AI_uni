@@ -42,6 +42,11 @@ public class DFSAlgo implements  ISearchAlgo{
     }
 
     @Override
+    public Node executeRoot(Node root, String goal, int limit) {
+        return null;
+    }
+
+    @Override
     public Node executeStartNode(Node root, String start, String goal) {
         Stack<Node> frontier = new Stack<>();
         List<Node> expandList = new ArrayList<>();
@@ -72,11 +77,20 @@ public class DFSAlgo implements  ISearchAlgo{
                         if(startF ==true){
                             child.setParent(current);
                             child.setPathCost(current.getPathCost() + current.getEdgeWeigth(child));
+                        }else {
+                            child.setParent(null);
+                            child.setPathCost(current.getPathCost() + current.getEdgeWeigth(child));
+
                         }
                     }
                 }
             }
         }
+        return null;
+    }
+
+    @Override
+    public Node executeStartNode(Node root, String start, String goal, int limit) {
         return null;
     }
 }

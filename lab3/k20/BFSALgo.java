@@ -39,6 +39,11 @@ public class BFSALgo implements ISearchAlgo {
     }
 
     @Override
+    public Node executeRoot(Node root, String goal, int limit) {
+        return null;
+    }
+
+    @Override
     public Node executeStartNode(Node root, String start, String goal) {
         //NOTE: theo graph
         Queue<Node> frontier = new LinkedList<>();
@@ -61,8 +66,8 @@ public class BFSALgo implements ISearchAlgo {
                 for (Node child :childList) {
                    if(!frontier.contains(child) && !expandList.contains(child)){
                        frontier.add(child);
-                       if(started){
-                           child.setParent(current);
+                           if(started){
+                               child.setParent(current);
                            child.setPathCost(current.getPathCost()+ current.getEdgeWeigth(child));
                        }
 
@@ -72,6 +77,11 @@ public class BFSALgo implements ISearchAlgo {
             }
 
         }
+        return null;
+    }
+
+    @Override
+    public Node executeStartNode(Node root, String start, String goal, int limit) {
         return null;
     }
 }

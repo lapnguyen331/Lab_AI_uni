@@ -38,7 +38,7 @@ public class Node implements Comparable<Node> {
 		this.parent = parent;
 	}
 
-	public List<Edge> getChildren() {
+	public List<Edge> getEdgeChildren() {
 		return children;
 	}
 
