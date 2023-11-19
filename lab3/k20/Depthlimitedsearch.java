@@ -88,4 +88,14 @@ public class Depthlimitedsearch implements ISearchAlgo{
         }
         return null;
     }
+    //method support tìm đường đi theo depth limit search, tự tăng limit đến khi tìm dc hoặc duyệt hết đồ thị
+    public void executeUntilFindpath(Node root, String goal){
+        int limit = 0;
+        Node em;
+        do{
+            em = executeRoot(root,goal,limit);
+        }while (em != null);
+
+
+    }
 }
